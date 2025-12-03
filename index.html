@@ -6,41 +6,96 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1"
     />
+    <title>Document</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="./style.css" />
-
-    <title>PokeFetch</title>
   </head>
   <body>
-    <div class="main-wrapper">
-      <div class="text-area">
-        <h1>Welcome to PokeFetch</h1>
-        <p>Enter the name of a pokemon below</p>
+    <div
+      class="BACKGROUND bg-[url('/assets/magic-landscape.jpg')] bg-cover bg-center h-screen w-full p-8 place-items-center text-white"
+    >
+      <div
+        class="relative p-8 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.25)] flex flex-col gap-4 min-w-[50%] min-h-[70%] justify-between items-center"
+      >
+        <div
+          class="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/20 to-white/5 pointer-events-none"
+        ></div>
 
-        <input type="text" id="pokeName" autocomplete="off" />
-        <button id="fetchBtn">Fetch Pokemon</button>
-      </div>
-      <div class="poke-area">
-        <br />
-        <img src="" alt="Pokemin Img" id="pokemonSprite" />
+        <h2
+          id="PokeName"
+          class="text-white text-2xl font-semibold relative z-10"
+        >
+          Fetch a Pokémon!
+        </h2>
+        <img class="sm:w-10/10 md:w-half lg:w-2/4" id="PokeImg" src="" alt="" />
 
-        <h3 id="nameOfPoke"></h3>
+        <div
+          class="infoWarpper flex flex-col justify-center sm:text-1xl md: text-2xl lg:text-3xl"
+        >
+          <p class="text-white/80 mt-2 relative z-10">
+            ID:
+            <span id="PokeId" class="text-white/80 mt-2 relative z-10"></span>
+          </p>
+          <p class="text-white/80 mt-2 relative z-10">
+            Height:
+            <span id="PokeH" class="text-white/80 mt-2 relative z-10"></span>
+          </p>
+          <p class="text-white/80 mt-2 relative z-10">
+            Weight:
+            <span id="PokeW" class="text-white/80 mt-2 relative z-10"></span>
+          </p>
+        </div>
 
-        <h3 id="idOfPoke"></h3>
-      </div>
-      <div class="button-wrapper">
-        <button id="shinyBtn">See Shiny</button>
-        <button id="clearBtn">Clear</button>
+        <div class="searchWrapper">
+          <input
+            id="search"
+            class="bg-gray-400 rounded-md p-1 text-black autocomplete text-[16]"
+            type="text"
+          />
+          <div class="buttonWrapper mt-2">
+            <button
+              id="Fbtn"
+              class="inset-0 rounded-lg bg-gradient-to-br from-black/20 to-black/5 border border-black pl-1 pr-1"
+            >
+              Fetch
+            </button>
+
+            <button
+              id="Sbtn"
+              class="inset-0 rounded-lg bg-gradient-to-br from-black/20 to-black/5 border border-black pl-1 pr-1"
+            >
+              Shiny
+            </button>
+
+            <button
+              id="Dbtn"
+              class="inset-0 rounded-lg bg-gradient-to-br from-black/20 to-black/5 border border-black pl-1 pr-1"
+            >
+              DreamWorld
+            </button>
+
+            <button
+              id="Cbtn"
+              class="inset-0 rounded-lg bg-gradient-to-br from-black/20 to-black/5 border border-black pl-1 pr-1"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
     <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
   </body>
 </html>
